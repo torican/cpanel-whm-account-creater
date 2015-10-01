@@ -7,13 +7,13 @@
 
 # GLOBAL SETTINGS:
 
-$host 					= "dubdubdesign.co.nz"; 					// host ie dubdubdesign.co.nz
-$root_pass 			= "";					 										// WHM root password
-$user_plan 			= "DubDubDesign";				  				// WHM user plan ie DubDubDesign
-$user_email 		= "michael@dubdubdesign.co.nz";		// account owner email
-$cpanel_skin 		= "x3"; 													// typically 'x3'
-$has_shell			= 'y'; 														// y/n
-$csv_path				= 'account.csv';									// path to CSV
+$host 		= "dubdubdesign.co.nz"; 	// host ie dubdubdesign.co.nz
+$root_pass 	= "";				// WHM root password
+$user_plan 	= "DubDubDesign";		// WHM user plan ie DubDubDesign
+$user_email 	= "michael@dubdubdesign.co.nz";	// account owner email
+$cpanel_skin 	= "x3"; 			// typically 'x3'
+$has_shell	= 'y'; 				// y/n
+$csv_path	= 'account.csv';		// path to CSV
 
 ###############################################################
 # DON'T EDIT BELOW THIS LINE
@@ -28,16 +28,16 @@ $xmlapi->set_debug(1);
 
 while($count<count($csv)){	
 	$user_domain 		= $csv[$count][4];
-	$user_name 			= $csv[$count][2];
-	$user_pass 			= $csv[$count][3];
-	$cpuser 				= $csv[$count][2];
-	$cppass 				= $csv[$count][3];
+	$user_name 		= $csv[$count][2];
+	$user_pass 		= $csv[$count][3];
+	$cpuser 		= $csv[$count][2];
+	$cppass 		= $csv[$count][3];
 	$cpanel_host 		= $host;
 	$db_username 		= $csv[$count][7];
 	$db_userpass 		= $csv[$count][9];
-	$db_name 				= $csv[$count][8];
-	$park1					= $csv[$count][5]; 
-	$park2					= $csv[$count][6]; 	
+	$db_name 		= $csv[$count][8];
+	$park1			= $csv[$count][5]; 
+	$park2			= $csv[$count][6]; 	
 
 	$acct = array( 'username' => $user_name, 'password' => $user_pass, 'domain' => $user_domain , 'plan' => $user_plan, 'contactemail' => $user_email, 'hasshell' => $has_shell );
 	$xmlapi->createacct($acct);
